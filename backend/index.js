@@ -17,16 +17,15 @@ const uri = process.env.MONGO_URL ;
 const app = express();
 
 const allowedOrigins = [
+  "https://stock-broker-ten.vercel.app",
+  "https://stock-broker-sh31.vercel.app", // if you still need it
   process.env.frontendUrl,
   process.env.dashboardUrl,
-  "http://localhost:5173", // for local dev if needed
-].filter(Boolean); // removes undefined/null
+].filter(Boolean);
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: true,
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 console.log("CORS enabled for:", process.env.frontendUrl, process.env.dashboardUrl);
