@@ -16,9 +16,14 @@ const uri = process.env.MONGO_URL ;
 
 const app = express();
 
-// CORS configuration
+const allowedOrigins = [
+  process.env.frontendUrl,
+  process.env.dashboardUrl,
+  "http://localhost:5173", // for local dev if needed
+].filter(Boolean); // removes undefined/null
+
 app.use(cors({
-  origin: [process.env.frontendUrl, process.env.dashboardUrl],
+  origin: allowedOrigins,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
