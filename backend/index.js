@@ -31,7 +31,7 @@ app.use(cors({
 
 console.log("CORS enabled for:", process.env.frontendUrl, process.env.dashboardUrl);
 
-app.use('set-proxy', true);
+app.set('trust proxy', true);
 
 app.use(bodyParser.json());
 
