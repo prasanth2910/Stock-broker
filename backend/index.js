@@ -24,6 +24,8 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
+console.log("CORS enabled for:", process.env.frontendUrl, process.env.dashboardUrl);
+
 app.use('set-proxy', true);
 
 app.use(bodyParser.json());
