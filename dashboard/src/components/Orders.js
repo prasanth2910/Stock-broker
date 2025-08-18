@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Orders.css";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
+console.log("BACKEND_URL:", BACKEND_URL);
 const Orders = ({ token }) => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +16,7 @@ const Orders = ({ token }) => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:3000/api/orders", {
+      const response = await axios.get(`{BACKEND_URL}/api/orders`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

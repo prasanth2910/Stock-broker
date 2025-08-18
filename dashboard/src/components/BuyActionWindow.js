@@ -8,6 +8,7 @@ import "./BuyActionWindow.css";
 
 // 👇 fallback should be your backend port (not same as frontend 3000)
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
+console.log("BACKEND_URL:", BACKEND_URL);
 
 const BuyActionWindow = ({ uid, token }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
