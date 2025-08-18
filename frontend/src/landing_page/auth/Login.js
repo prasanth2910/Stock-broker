@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-const backendUrl = 'http://localhost:3000';
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 console.log("Redirecting to dashboard:", process.env.REACT_APP_DASHBOARD_URL);
 console.log("Backend URL:", backendUrl);
 function Login() {
