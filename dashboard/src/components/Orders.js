@@ -16,7 +16,7 @@ const Orders = ({ token }) => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`{BACKEND_URL}/api/orders`, {
+      const response = await axios.get(`${BACKEND_URL}/api/orders`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
